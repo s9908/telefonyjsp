@@ -1,9 +1,21 @@
 package org.piotrszura.telefonyjsp;
 
-public class Producent {
+public class Producent 
+{
 	private int id;
 	private String nazwa;
+	private static int ostatni_id;
 	
+	public Producent()
+	{
+		super();
+	}
+	
+	public Producent(String n)
+	{
+		this.nazwa = n;
+		this.id = ++ostatni_id;
+	}
 	public int getId() 
 	{
 		return id;
