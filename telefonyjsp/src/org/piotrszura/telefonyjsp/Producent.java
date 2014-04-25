@@ -14,7 +14,7 @@ public class Producent
 	public Producent(String n)
 	{
 		this.nazwa = n;
-		this.id = ++ostatni_id;
+		this.id = ostatni_id++;
 	}
 	public int getId() 
 	{

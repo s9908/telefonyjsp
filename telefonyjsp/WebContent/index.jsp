@@ -22,8 +22,7 @@
 	<tr>
 		<td colspan='2'>
 			<a href='./?frm=producenci'>Producenci</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href='./?frm=telefony'>Telefony</a> &nbsp;&nbsp;|&nbsp;&nbsp;
-			<a href='./?frm=info'>Info</a> 
+			<a href='./?frm=telefony'>Telefony</a> &nbsp;&nbsp;
 		</td>
 	</tr>
 	

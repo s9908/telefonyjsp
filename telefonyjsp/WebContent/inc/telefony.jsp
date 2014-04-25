@@ -2,10 +2,30 @@
 <%@page import="org.piotrszura.telefonyjsp.Producent"%>
 <jsp:useBean id="storage" class="org.piotrszura.telefonyjsp.StorageService" scope="application" />
 
+<jsp:useBean id="tel" class="org.piotrszura.telefonyjsp.Telefon" scope="session" />
+<jsp:setProperty name="tel" property="*" /> 
+
+<%
+	if(request.getParameter("nazwa") != null )
+	{
+		if(request.getParameter("nazwa").length() > 0)
+		{
+			Telefon ntel = new Telefon();
+			ntel.setNazwa(tel.getNazwa());
+			ntel.setProducent(tel.getProducent());
+			if(request.getParameter("f1") != null) ntel.setF1(tel.getF1());
+			if(request.getParameter("f2") != null) ntel.setF2(tel.getF2());
+			if(request.getParameter("f3") != null) ntel.setF3(tel.getF3());
+			if(request.getParameter("f4") != null) ntel.setF4(tel.getF4());
+			if(request.getParameter("f5") != null) ntel.setF5(tel.getF5());
+			storage.telefonDodaj(ntel);
+		}
+	}
+ %>
 
 <table border='1'>
 	<tr>
-		<th>id</th>
+		<th>producent</th>
 		<th>nazwa</th>
 		<th>LTE 7G</th>
 		<th>NFC</th>
@@ -18,8 +38,13 @@
 		{
 			Telefon p = storage.telefonPobierz(i);
 			out.print("<tr>"+
-					  	"<td>" + p.getId() + "</td>"+
+					  	"<td>" + storage.producentPobierz(p.getProducent()).getNazwa()  + "</td>"+
 					  	"<td>" + p.getNazwa() + "</td>"+
+					  	"<td>" + Telefon.notnull(p.getF1()) + "</td>"+
+					  	"<td>" + Telefon.notnull(p.getF2()) + "</td>"+
+					  	"<td>" + Telefon.notnull(p.getF3()) + "</td>"+
+					  	"<td>" + Telefon.notnull(p.getF4()) + "</td>"+
+					  	"<td>" + Telefon.notnull(p.getF5()) + "</td>"+
 					  "</tr>");
 					  
 		}

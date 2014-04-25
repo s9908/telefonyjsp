@@ -38,5 +38,14 @@ public class StorageService
 		return producent.get(i);
 	}
 	
+	public Producent ProducentByID(int i)
+	{
+		for(int k=0; k<=producent.size(); k++)
+		{
+			if(producent.get(k).getId() == k) return producent.get(k);
+		}
+		return null;
+	}
+	
 	
 }

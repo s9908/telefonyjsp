@@ -70,5 +70,9 @@ public class Telefon
 	{
 		this.id = id;
 	}	
-	
+	public static String notnull(String t)
+	{
+		if(t == null) return "NIE";
+		else return "TAK";
+	}	
 }
